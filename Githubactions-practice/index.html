@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Depoyment
+metadata:
+  name: Deploymenton statless 
+spec :
+  replicas; 5 
+  selector:
+    matchLables:
+       myapp:143 
+
+   template: 
+     metadata:
+        name: mypod 
+	lables:
+	  myapp: 143 
+
+	spec:
+	 containers:
+	   - name: first
+	     image: busybox
+	      ports:
+	       - containerPort: 8080
+	     volumeMounts:
+	       - name: vdf 
+	         mountPath: /src/vbs 
+          volumes:
+	     - name: vdf 
+	       persistentVolumeCliam:
+	         claimName: 
